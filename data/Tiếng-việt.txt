@@ -1,0 +1,306 @@
+# BANK MARKETING — BẢN DỊCH TIẾNG VIỆT
+
+## 1. Tên dataset
+
+**Bank Marketing** — Tiếp thị ngân hàng.
+
+---
+
+## 2. Nguồn
+
+Được tạo bởi:
+
+* **Paulo Cortez** — Đại học Minho (Univ. Minho)
+* **Sérgio Moro** — ISCTE-IUL
+
+Năm **2012**.
+
+---
+
+## 3. Sử dụng trước đây
+
+Bộ dữ liệu đầy đủ đã được mô tả và phân tích trong công trình:
+
+**S. Moro, R. Laureano và P. Cortez.**
+*Using Data Mining for Bank Direct Marketing: An Application of the CRISP-DM Methodology.*
+
+Trong:
+
+*Proceedings of the European Simulation and Modelling Conference – ESM'2011*, trang 117–121, Guimarães, Bồ Đào Nha, tháng 10 năm 2011, EUROSIS.
+
+---
+
+## 4. Thông tin liên quan
+
+Dữ liệu liên quan đến các **chiến dịch tiếp thị trực tiếp của một tổ chức ngân hàng tại Bồ Đào Nha**.
+
+Các chiến dịch tiếp thị được thực hiện dựa trên **các cuộc gọi điện thoại**.
+
+Trong nhiều trường hợp, cần phải **liên hệ với cùng một khách hàng nhiều hơn một lần** để xác định liệu khách hàng có đăng ký sản phẩm hay không.
+
+Sản phẩm được đề cập ở đây là **tiền gửi có kỳ hạn (bank term deposit)**.
+
+### Hai bộ dữ liệu
+
+Có **2 bộ dữ liệu**:
+
+1. **bank-full.csv**
+
+   * Chứa toàn bộ các mẫu dữ liệu.
+   * Được sắp xếp theo ngày.
+   * Dữ liệu trải dài từ **tháng 5/2008 đến tháng 11/2010**.
+
+2. **bank.csv**
+
+   * Chứa **10% số mẫu** của `bank-full.csv`.
+   * Có **4.521 mẫu**.
+   * Được lựa chọn **ngẫu nhiên** từ `bank-full.csv`.
+
+Bộ dữ liệu nhỏ hơn (`bank.csv`) được cung cấp để kiểm thử các thuật toán Machine Learning có yêu cầu tính toán cao hơn, chẳng hạn như **SVM (Support Vector Machine)**.
+
+### Mục tiêu phân loại
+
+Mục tiêu của bài toán phân loại là:
+
+> **Dự đoán liệu khách hàng có đăng ký tiền gửi có kỳ hạn hay không.**
+
+Biến mục tiêu là **`y`**.
+
+---
+
+## 5. Số lượng mẫu
+
+* `bank-full.csv`: **45.211 mẫu**
+* `bank.csv`: **4.521 mẫu**
+
+---
+
+## 6. Số lượng thuộc tính
+
+Có:
+
+* **16 thuộc tính đầu vào**
+* **1 thuộc tính đầu ra**
+
+→ Tổng cộng **17 thuộc tính**.
+
+---
+
+# 7. Thông tin về các thuộc tính
+
+Để biết thêm thông tin, tài liệu gốc đề nghị tham khảo **Moro et al., 2011**.
+
+## Các biến đầu vào
+
+### A. Thông tin khách hàng ngân hàng
+
+### 1. `age` — Tuổi
+
+* Kiểu dữ liệu: **số (numeric)**
+* Đại diện cho tuổi của khách hàng.
+
+### 2. `job` — Nghề nghiệp
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+* `admin.` — hành chính
+* `unknown` — không xác định
+* `unemployed` — thất nghiệp
+* `management` — quản lý
+* `housemaid` — giúp việc gia đình
+* `entrepreneur` — doanh nhân
+* `student` — sinh viên
+* `blue-collar` — lao động phổ thông
+* `self-employed` — tự kinh doanh / tự làm chủ
+* `retired` — đã nghỉ hưu
+* `technician` — kỹ thuật viên
+* `services` — dịch vụ
+
+### 3. `marital` — Tình trạng hôn nhân
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+* `married` — đã kết hôn
+* `divorced` — đã ly hôn
+* `single` — độc thân
+
+**Lưu ý:** `divorced` bao gồm cả người **đã ly hôn hoặc góa**.
+
+### 4. `education` — Trình độ học vấn
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+* `unknown` — không xác định
+* `secondary` — trung học
+* `primary` — tiểu học
+* `tertiary` — đại học / giáo dục bậc cao
+
+### 5. `default` — Có khoản tín dụng bị quá hạn hay không?
+
+* Kiểu dữ liệu: **nhị phân (binary)**
+
+Giá trị:
+
+* `yes` — có
+* `no` — không
+
+### 6. `balance` — Số dư
+
+* Kiểu dữ liệu: **số (numeric)**
+* Là **số dư trung bình hằng năm**, tính bằng **euro (€)**.
+
+### 7. `housing` — Có khoản vay mua nhà hay không?
+
+* Kiểu dữ liệu: **nhị phân (binary)**
+
+Giá trị:
+
+* `yes` — có
+* `no` — không
+
+### 8. `loan` — Có khoản vay cá nhân hay không?
+
+* Kiểu dữ liệu: **nhị phân (binary)**
+
+Giá trị:
+
+* `yes` — có
+* `no` — không.
+
+---
+
+# B. Thông tin liên quan đến lần liên hệ cuối cùng của chiến dịch hiện tại
+
+### 9. `contact` — Phương thức liên hệ
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+* `unknown` — không xác định
+* `telephone` — điện thoại bàn
+* `cellular` — điện thoại di động
+
+### 10. `day` — Ngày liên hệ cuối cùng
+
+* Kiểu dữ liệu: **số (numeric)**
+* Là **ngày trong tháng** mà khách hàng được liên hệ lần cuối.
+
+### 11. `month` — Tháng liên hệ cuối cùng
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+`jan`, `feb`, `mar`, ..., `nov`, `dec`
+
+→ Tương ứng với các tháng từ **tháng 1 đến tháng 12**.
+
+### 12. `duration` — Thời lượng cuộc gọi cuối cùng
+
+* Kiểu dữ liệu: **số (numeric)**
+* Đơn vị: **giây**
+* Đại diện cho thời lượng của **cuộc gọi cuối cùng**.
+
+---
+
+# C. Các thuộc tính khác
+
+### 13. `campaign` — Số lần liên hệ trong chiến dịch hiện tại
+
+* Kiểu dữ liệu: **số (numeric)**
+* Là số lần khách hàng đã được liên hệ **trong chiến dịch hiện tại**.
+* Bao gồm cả **lần liên hệ cuối cùng**.
+
+### 14. `pdays` — Số ngày kể từ lần liên hệ trước
+
+* Kiểu dữ liệu: **số (numeric)**
+* Là số ngày đã trôi qua kể từ khi khách hàng được liên hệ lần cuối trong **một chiến dịch trước đó**.
+* Giá trị **`-1`** có nghĩa là khách hàng **chưa từng được liên hệ trong chiến dịch trước đó**.
+
+### 15. `previous` — Số lần liên hệ trước đó
+
+* Kiểu dữ liệu: **số (numeric)**
+* Là số lần khách hàng đã được liên hệ **trước chiến dịch hiện tại**.
+
+### 16. `poutcome` — Kết quả chiến dịch marketing trước đó
+
+* Kiểu dữ liệu: **phân loại (categorical)**
+
+Các giá trị:
+
+* `unknown` — không xác định
+* `other` — khác
+* `failure` — thất bại
+* `success` — thành công.
+
+---
+
+# 8. Biến đầu ra — Target
+
+### 17. `y` — Khách hàng có đăng ký tiền gửi có kỳ hạn hay không?
+
+* Kiểu dữ liệu: **nhị phân (binary)**
+
+Hai giá trị:
+
+* `yes` — khách hàng **đã đăng ký**
+* `no` — khách hàng **không đăng ký**
+
+Đây chính là **biến mục tiêu (target variable)** mà mô hình Machine Learning cần dự đoán.
+
+---
+
+# 9. Giá trị bị thiếu
+
+**Không có giá trị thuộc tính bị thiếu (Missing Attribute Values: None).**
+
+Tức là theo mô tả chính thức của dataset, **không có missing value** trong các thuộc tính.
+
+---
+
+# Tóm tắt nhanh dataset
+
+| Thành phần             | Thông tin                           |
+| ---------------------- | ----------------------------------- |
+| Tên                    | Bank Marketing                      |
+| Nguồn                  | Paulo Cortez & Sérgio Moro          |
+| Quốc gia               | Bồ Đào Nha                          |
+| Lĩnh vực               | Ngân hàng / Marketing               |
+| Dữ liệu                | Chiến dịch marketing qua điện thoại |
+| Dataset đầy đủ         | `bank-full.csv`                     |
+| Dataset nhỏ            | `bank.csv`                          |
+| Số mẫu `bank-full.csv` | **45.211**                          |
+| Số mẫu `bank.csv`      | **4.521**                           |
+| Biến đầu vào           | **16**                              |
+| Biến đầu ra            | **1**                               |
+| Tổng thuộc tính        | **17**                              |
+| Target                 | `y`                                 |
+| Target `yes`           | Đăng ký tiền gửi có kỳ hạn          |
+| Target `no`            | Không đăng ký                       |
+| Missing values         | **Không có**                        |
+| Khoảng thời gian       | **05/2008 – 11/2010**               |
+| Bài toán               | **Binary Classification**           |
+
+### Ý nghĩa bài toán Machine Learning
+
+Có thể hiểu rất đơn giản:
+
+**Thông tin khách hàng + thông tin các lần liên hệ → Mô hình ML → dự đoán `y = yes/no`.**
+
+Ví dụ:
+
+> Một khách hàng 35 tuổi, làm kỹ thuật viên, độc thân, có số dư nhất định, không có khoản vay cá nhân...
+> → Mô hình dự đoán khách hàng **có khả năng (`yes`) hoặc không có khả năng (`no`) đăng ký tiền gửi có kỳ hạn**.
+
+Đây là **bài toán phân loại nhị phân (binary classification)**.
+
+## Lưu ý quan trọng cho bài của bạn
+
+File gốc **không nói rằng mọi biến đều phải được sử dụng**, cũng không khẳng định biến nào là quan trọng nhất. Nó chỉ cung cấp **16 input variables và 1 target variable**. Vì vậy nếu bạn đang làm Random Forest/Logistic Regression, phần **lựa chọn feature, xử lý categorical variables và đánh giá độ quan trọng của từng biến** phải được trình bày như phần xử lý Machine Learning của bạn, không nên nói rằng đó là kết luận có sẵn từ dataset.

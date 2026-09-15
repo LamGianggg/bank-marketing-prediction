@@ -1,0 +1,74 @@
+Yêu cầu trích dẫn:
+Tập dữ liệu này có sẵn công khai cho mục đích nghiên cứu. Chi tiết được mô tả trong [Moro và cộng sự, 2011].
+Vui lòng đưa trích dẫn này vào nếu bạn có kế hoạch sử dụng cơ sở dữ liệu này:
+
+[Moro và cộng sự, 2011] S. Moro, R. Laureano và P. Cortez. Sử dụng Khai phá Dữ liệu cho Marketing Trực tiếp Ngân hàng: Một Ứng dụng của Phương pháp luận CRISP-DM.
+Trong P. Novais và cộng sự (Chủ biên), Kỷ yếu Hội nghị Mô phỏng và Mô hình hóa Châu Âu - ESM'2011, tr. 117-121, Guimarães, Bồ Đào Nha, Tháng 10, 2011. EUROSIS.
+
+Có sẵn tại: [pdf] http://hdl.handle.net/1822/14838
+[bib] http://www3.dsi.uminho.pt/pcortez/bib/2011-esm-1.txt
+
+Tiêu đề: Marketing Ngân hàng (Bank Marketing)
+
+Nguồn
+Tạo bởi: Paulo Cortez (Đại học Minho) và Sérgio Moro (ISCTE-IUL) @ 2012
+
+Lịch sử sử dụng:
+
+Tập dữ liệu đầy đủ đã được mô tả và phân tích trong:
+
+S. Moro, R. Laureano và P. Cortez. Sử dụng Khai phá Dữ liệu cho Marketing Trực tiếp Ngân hàng: Một Ứng dụng của Phương pháp luận CRISP-DM.
+Trong P. Novais và cộng sự (Chủ biên), Kỷ yếu Hội nghị Mô phỏng và Mô hình hóa Châu Âu - ESM'2011, tr. 117-121, Guimarães,
+Bồ Đào Nha, Tháng 10, 2011. EUROSIS.
+
+Thông tin liên quan:
+
+Dữ liệu liên quan đến các chiến dịch marketing trực tiếp của một tổ chức ngân hàng Bồ Đào Nha.
+Các chiến dịch marketing dựa trên các cuộc gọi điện thoại. Thường xuyên yêu cầu nhiều hơn một lần liên hệ với cùng một khách hàng
+để đánh giá xem sản phẩm (tiền gửi có kỳ hạn ngân hàng) có được đăng ký mua hay không.
+
+Có hai tập dữ liệu:
+
+bank-full.csv với tất cả các mẫu, được sắp xếp theo ngày (từ Tháng 5 năm 2008 đến Tháng 11 năm 2010).
+
+bank.csv với 10% số mẫu (4521), được lựa chọn ngẫu nhiên từ bank-full.csv.
+Tập dữ liệu nhỏ hơn được cung cấp để thử nghiệm các thuật toán học máy đòi hỏi khắt khe hơn về mặt tính toán (ví dụ: SVM).
+
+Mục tiêu phân loại là dự đoán xem khách hàng có đăng ký tiền gửi có kỳ hạn hay không (biến y).
+
+Số lượng mẫu: 45211 cho bank-full.csv (4521 cho bank.csv)
+
+Số lượng thuộc tính: 16 + thuộc tính đầu ra.
+
+Thông tin thuộc tính:
+
+Để biết thêm thông tin, hãy đọc [Moro và cộng sự, 2011].
+
+Các biến đầu vào:
+
+dữ liệu khách hàng ngân hàng:
+1 - age: tuổi (dạng số)
+2 - job: nghề nghiệp (phân loại: "admin." - hành chính, "unknown" - không rõ, "unemployed" - thất nghiệp, "management" - quản lý, "housemaid" - người giúp việc, "entrepreneur" - doanh nhân, "student" - học sinh/sinh viên, "blue-collar" - lao động phổ thông, "self-employed" - tự kinh doanh, "retired" - nghỉ hưu, "technician" - kỹ thuật viên, "services" - dịch vụ)
+3 - marital: tình trạng hôn nhân (phân loại: "married" - đã kết hôn, "divorced" - ly hôn, "single" - độc thân; lưu ý: "divorced" nghĩa là đã ly hôn hoặc góa chồng/vợ)
+4 - education: trình độ học vấn (phân loại: "unknown" - không rõ, "secondary" - trung học, "primary" - tiểu học, "tertiary" - đại học/sau đại học)
+5 - default: có nợ xấu tín dụng không? (nhị phân: "yes", "no")
+6 - balance: số dư bình quân hàng năm, tính bằng euro (dạng số)
+7 - housing: có khoản vay mua nhà không? (nhị phân: "yes", "no")
+8 - loan: has khoản vay cá nhân không? (nhị phân: "yes", "no")
+
+liên quan đến lần liên hệ cuối cùng của chiến dịch hiện tại:
+9 - contact: hình thức liên hệ (phân loại: "unknown" - không rõ, "telephone" - điện thoại bàn, "cellular" - điện thoại di động)
+10 - day: ngày liên hệ cuối cùng trong tháng (dạng số)
+11 - month: tháng liên hệ cuối cùng trong năm (phân loại: "jan", "feb", "mar", ..., "nov", "dec")
+12 - duration: thời lượng liên hệ cuối cùng, tính bằng giây (dạng số)
+
+các thuộc tính khác:
+13 - campaign: số lần liên hệ được thực hiện trong chiến dịch này và cho khách hàng này (dạng số, bao gồm cả lần liên hệ cuối)
+14 - pdays: số ngày đã trôi qua sau khi khách hàng được liên hệ lần cuối từ một chiến dịch trước đó (dạng số, -1 nghĩa là khách hàng chưa từng được liên hệ trước đây)
+15 - previous: số lần liên hệ được thực hiện trước chiến dịch này và cho khách hàng này (dạng số)
+16 - poutcome: kết quả của chiến dịch marketing trước đó (phân loại: "unknown" - không rõ, "other" - khác, "failure" - thất bại, "success" - thành công)
+
+Biến đầu ra (mục tiêu mong muốn):
+17 - y - khách hàng đã đăng ký tiền gửi có kỳ hạn chưa? (nhị phân: "yes", "no")
+
+Giá trị thuộc tính bị thiếu: Không có
